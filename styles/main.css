@@ -1,0 +1,49 @@
+body {
+    background-color:rgb(26,25,25);
+    padding:0px;
+    margin:0px;
+}
+
+#content {
+    width:100%;
+    height:100%;
+    position:relative;
+    font-family:'Helvetica' sans-serif;
+    z-index:1;
+}
+
+/* Menu */
+#menu-link {
+    margin:20px;
+    position:absolute;
+    left:0px;
+    bottom:0px;
+    cursor:pointer;
+}
+#menu {
+    background-color:#ccc;
+    width:250px;
+    height:400px;
+    z-index:9999;
+}
+
+/* Text styles */
+.white {
+    color:#fff;
+}
+.light-grey {
+    color:#b3b3b3;   
+}
+.caps {
+    text-transform: uppercase
+}
+
+/* Div positionings */
+.centre-middle {
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin-right:-50%;
+    transform:translate(-50%,-50%);
+    margin:0 auto;
+}

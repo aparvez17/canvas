@@ -1,2 +1,0 @@
-# canvas
-Canvas Digital
