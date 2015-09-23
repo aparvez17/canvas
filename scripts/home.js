@@ -16,16 +16,23 @@ $(document).ready(function(){
     }
     
     $('.works-item').mouseenter(function(){
-        var img = $("#work-3").data('img');
+        var img = $(this).data('img');
+        var title = $(this).data('title');
         img = "url(" + img + ")";
-        $('#background').css("background-image",img);
-        $('#background').fadeTo(400,0.6);
+        $('#background').css("background-image",img).fadeTo(400,0.6);
+        $('#works-subtitle').html(title).fadeIn(400);
         $(this).animate({"width":"+=20px","height":"+=20px","margin-left":"-=10px","margin-top":"-=10px","border-radius":"+=10px"});
+        
     });
     
     $('.works-item').mouseleave(function(){
         $('#background').fadeTo(400,0);
-         $(this).animate({"width":"-=20px","height":"-=20px","margin-left":"+=10px","margin-top":"+=10px","border-radius":"-=10px"});
+        $(this).animate({"width":"-=20px","height":"-=20px","margin-left":"+=10px","margin-top":"+=10px","border-radius":"-=10px"});
+        $('#works-subtitle').fadeOut(400);
+    });
+    
+    $('.works-item').click(function(){
+         
     });
     
     $('#works-icon-link').click(function() {

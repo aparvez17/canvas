@@ -38,6 +38,14 @@
     background-size:cover;
 }
 
+/* Works subtitle */
+#works-subtitle {
+    position:fixed;
+    bottom:0;
+    right:0;
+    margin:20px 30px;
+}
+
 /* Works backgrounds */
 #work-0 {
     background-image:url('../images/work-thumb/compelling_leadership.jpg');   
@@ -61,7 +69,7 @@
     background-image:url('../images/work-thumb/paul_bland.jpg');   
 }
 #work-7 {
-    background-image:url('../images/work-thumb/yess.jpg');   
+    background-image:url('../images/work-thumb/yess.jpg');  
 }
 #work-8 {
     background-image:url('../images/work-thumb/zippity.jpg');   

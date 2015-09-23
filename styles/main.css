@@ -2,6 +2,7 @@ body {
     background-color:rgb(26,25,25);
     padding:0px;
     margin:0px;
+    min-height:750px;
 }
 
 #content {
@@ -46,4 +47,49 @@ body {
     margin-right:-50%;
     transform:translate(-50%,-50%);
     margin:0 auto;
+}
+.float-left {
+    float:left;
+    position:relative;
+}
+.float-right {
+    float:right;
+    position:relative;
+}
+.overflow-hidden {
+    overflow:hidden;
+}
+
+/* Div styles */
+.pointer {
+    cursor:pointer;   
+}
+
+
+/* Text styles */
+.thin {
+    font-weight:300;
+}
+.bold {
+    font-weight:600;
+}   
+.small {
+    font-size:14px;   
+}
+.medium {
+    font-size:16px;   
+}
+
+/* Colours */
+.black {
+    color:#000; 
+}
+.white {
+    color:#fff;   
+}
+a {
+    text-decoration:none;   
+}
+a.white {
+    color:#fff;   
 }
