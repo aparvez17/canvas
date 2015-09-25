@@ -4,21 +4,32 @@ $(document).ready(function(){
     var lr = 50; /* Diameter of circles */
     var w = $('#works').width();
     var r = Math.round(1 / 2 * w - lr);
-    for (i = 0; i < 12; i++) {
-        var id = '#work-' + i;
-        var xpos = Math.round(w / 2 + r * Math.sin(i*Math.PI/6));
-        var ypos = Math.round(w / 2 - r * Math.cos(i*Math.PI/6));
-        $(id).css({
-            'top':ypos + 'px',
-            'left':xpos + 'px'
-        });
-        $(id).delay(-1*i*i + 100*i).fadeIn(400);
+    var positions = new Array();  
+    var ids = new Array();
+
+    function circles(rot){
+        for (i = 0; i < 12; i++) {
+            ids.push('#work-' + i);
+            var xpos = Math.round(w / 2 + r * Math.sin((i*Math.PI/6)+rot));
+            var ypos = Math.round(w / 2 - r * Math.cos((i*Math.PI/6)+rot));
+            $(ids[i]).css({
+                'top':ypos + 'px',
+                'left':xpos + 'px'
+            });
+            positions.push([xpos, ypos]);
+        }
     }
+    circles(0)
+    for(i = 0; i < 12; i++){
+        $(ids[i]).delay(-1*i*i + 70*i).fadeIn(400);
+    }
+              
 
     var item_w = 90;
     var size_change = 20;
     var margin = -45;
 
+    console.log(positions);
     $('.works-item').mouseenter(function(){
         var img = $("#work-3").data('img');
         img = "url(" + img + ")";
@@ -42,5 +53,11 @@ $(document).ready(function(){
     
     $('#works-icon-link').click(function() {
         window.location.href = "../index.html";
+    });
+
+    $( "body" ).mousemove(function( event ) {
+        mouse_x = event.pageX;
+        rot = mouse_x/1000;
+        circles(rot);
     });
 });
