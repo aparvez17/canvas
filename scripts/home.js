@@ -14,18 +14,30 @@ $(document).ready(function(){
         });
         $(id).delay(-1*i*i + 100*i).fadeIn(400);
     }
-    
+
+    var item_w = 90;
+    var size_change = 20;
+    var margin = -45;
+
     $('.works-item').mouseenter(function(){
         var img = $("#work-3").data('img');
         img = "url(" + img + ")";
         $('#background').css("background-image",img);
         $('#background').fadeTo(400,0.6);
-        $(this).animate({"width":"+=20px","height":"+=20px","margin-left":"-=10px","margin-top":"-=10px","border-radius":"+=10px"});
+        $(this).stop().animate({"width":(item_w+size_change),
+                                "height":(item_w+size_change),
+                                "margin-left":margin-(size_change/2),
+                                "margin-top":margin-(size_change/2),
+                                "background-size":"110%"}, 120);
     });
     
     $('.works-item').mouseleave(function(){
         $('#background').fadeTo(400,0);
-         $(this).animate({"width":"-=20px","height":"-=20px","margin-left":"+=10px","margin-top":"+=10px","border-radius":"-=10px"});
+        $(this).stop().animate({"width":(item_w),
+                                "height":(item_w),
+                                "margin-left":margin,
+                                "margin-top":margin, 
+                                "background-size":"100%"}, 120);
     });
     
     $('#works-icon-link').click(function() {

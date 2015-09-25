@@ -16,10 +16,10 @@
 .works-item {
     width:90px;
     height:90px;
-    border-radius:50px;
+    border-radius:100%;
     position:absolute;
-    margin-left:-50px;
-    margin-top:-50px;
+    margin-left:-45px;
+    margin-top:-45px;
     cursor:pointer;
     background-position: center;
     background-size: 100%;
