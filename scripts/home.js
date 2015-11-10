@@ -7,9 +7,13 @@ $(document).ready(function(){
     var positions = new Array();  
     var ids = new Array();
 
+    for(i = 0; i < 12; i++){
+        ids.push('#work-' + i);
+    }
+
     function circles(rot){
         for (i = 0; i < 12; i++) {
-            ids.push('#work-' + i);
+            
             var xpos = Math.round(w / 2 + r * Math.sin((i*Math.PI/6)+rot));
             var ypos = Math.round(w / 2 - r * Math.cos((i*Math.PI/6)+rot));
             $(ids[i]).css({
@@ -24,12 +28,10 @@ $(document).ready(function(){
         $(ids[i]).delay(-1*i*i + 70*i).fadeIn(400);
     }
               
-
     var item_w = 90;
     var size_change = 20;
     var margin = -45;
 
-    console.log(positions);
     $('.works-item').mouseenter(function(){
         var img = $(this).data('img');
         var title = $(this).data('title');
@@ -58,6 +60,7 @@ $(document).ready(function(){
 
     $( "body" ).mousemove(function( event ) {
         mouse_x = event.pageX;
+        mouse_y = event.pageY;
         rot = mouse_x/1000;
         circles(rot);
     });
