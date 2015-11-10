@@ -4,38 +4,61 @@ $(document).ready(function(){
     var lr = 50; /* Diameter of circles */
     var w = $('#works').width();
     var r = Math.round(1 / 2 * w - lr);
-    for (i = 0; i < 12; i++) {
-        var id = '#work-' + i;
-        var xpos = Math.round(w / 2 + r * Math.sin(i*Math.PI/6));
-        var ypos = Math.round(w / 2 - r * Math.cos(i*Math.PI/6));
-        $(id).css({
-            'top':ypos + 'px',
-            'left':xpos + 'px'
-        });
-        $(id).delay(-1*i*i + 100*i).fadeIn(400);
+    var positions = new Array();  
+    var ids = new Array();
+
+    function circles(rot){
+        for (i = 0; i < 12; i++) {
+            ids.push('#work-' + i);
+            var xpos = Math.round(w / 2 + r * Math.sin((i*Math.PI/6)+rot));
+            var ypos = Math.round(w / 2 - r * Math.cos((i*Math.PI/6)+rot));
+            $(ids[i]).css({
+                'top':ypos + 'px',
+                'left':xpos + 'px'
+            });
+            positions.push([xpos, ypos]);
+        }
     }
-    
+    circles(0)
+    for(i = 0; i < 12; i++){
+        $(ids[i]).delay(-1*i*i + 70*i).fadeIn(400);
+    }
+              
+
+    var item_w = 90;
+    var size_change = 20;
+    var margin = -45;
+
+    console.log(positions);
     $('.works-item').mouseenter(function(){
         var img = $(this).data('img');
         var title = $(this).data('title');
         img = "url(" + img + ")";
-        $('#background').css("background-image",img).fadeTo(400,0.6);
-        $('#works-subtitle').html(title).fadeIn(400);
-        $(this).animate({"width":"+=20px","height":"+=20px","margin-left":"-=10px","margin-top":"-=10px","border-radius":"+=10px"});
-        
+        $('#background').css("background-image",img);
+        $('#background').fadeTo(400,0.6);
+        $(this).stop().animate({"width":(item_w+size_change),
+                                "height":(item_w+size_change),
+                                "margin-left":margin-(size_change/2),
+                                "margin-top":margin-(size_change/2),
+                                "background-size":"110%"}, 120);
     });
     
     $('.works-item').mouseleave(function(){
         $('#background').fadeTo(400,0);
-        $(this).animate({"width":"-=20px","height":"-=20px","margin-left":"+=10px","margin-top":"+=10px","border-radius":"-=10px"});
-        $('#works-subtitle').fadeOut(400);
-    });
-    
-    $('.works-item').click(function(){
-         
+        $(this).stop().animate({"width":(item_w),
+                                "height":(item_w),
+                                "margin-left":margin,
+                                "margin-top":margin, 
+                                "background-size":"100%"}, 120);
     });
     
     $('#works-icon-link').click(function() {
         window.location.href = "../index.html";
+    });
+
+    $( "body" ).mousemove(function( event ) {
+        mouse_x = event.pageX;
+        rot = mouse_x/1000;
+        circles(rot);
     });
 });
