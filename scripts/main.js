@@ -17,3 +17,22 @@ $(document).ready(function(){
         alert(url);
     });
 });
+
+function fade_items(ids,dir,init) {
+    // ids:  array of element handles to fade
+    // dir:  0 to fade out, 1 to fade in
+    // init: initial delay
+    for (var i = 0, l = ids.length; i < l; i++) {
+        $(ids[i]).delay(delay_calc(i)+init).animate({opacity:dir},400);
+    }
+}
+
+function delay_calc(i) {
+    // Calculates delay used in fading pages
+    
+    var a = 200;  // first delay
+    var r = 0.75; // reduction parameter
+    var delay = a*(Math.pow(r,i) - 1)/(r - 1);
+    return delay;
+    
+}

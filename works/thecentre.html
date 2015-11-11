@@ -7,6 +7,11 @@
     <script src='../scripts/jquery.js'></script>
     <script src='../scripts/main.js'></script>
     <script src='../scripts/works.js'></script>
+    <script>
+        // number of items on each page
+        var arr = [6,4,2];
+        var titles = ['Overview','Web Design','Videography'];
+    </script>
 </head>
 <body>
     <div id='content'>
@@ -23,32 +28,68 @@
             </div>
         </div>
         <div id='works-content'>
+            
+<!-- Page 1 -->
             <div id='works-p-1' class='works-p'>
-                <div class='intro'>
+                <div id='p1-fade-1' class='intro'>
                     <h1>Overview</h1>
                     <p>The Centre for Research, Innovation and Future Development is an innovative research centre at St Paul's School in Bald Hills, QLD. They conduct research into areas of education and constantly strive to find a better approach to the problems that phase education today.</p>
                 </div>
                 <div class='tiles'>
-                    <div class='tile-grid'>
-                        <div id='p1-tile-1' class='tile float-left' style='background-color:#fff;'>
-                            <div class='centre-middle' style='font-weight:500;'>Brand Identity</div>
+                    <div class='tile-grid tile-grid4'>
+                        <div id='p1-fade-2' class='tile float-left' style='background-color:#fff;'>
+                            <div class='centre-middle centre-full-text semibold'>Brand Identity</div>
                         </div>
-                        <div id='p1-tile-2' class='tile float-left' style='background-color:#d71e04;'></div>
-                        <div id='p1-tile-3' class='tile float-left' style='background-color:#eee;'>
+                        <div id='p1-fade-3' class='tile float-left' style='background-color:#d71e04;'></div>
+                        <div id='p1-fade-4' class='tile float-left' style='background-color:#eee;'>
                             <img class='centre-middle' src='../images/works/thecentre/logo.png' style='width:70px;'/>
                         </div>
-                        <div id='p1-tile-4' class='tile float-left' style='background-image:url("../images/works/thecentre/starry_bg.jpg")'></div>
+                        <div id='p1-fade-5' class='tile float-left' style='background-image:url("../images/works/thecentre/starry_bg.jpg")'>
+                            <div class='centre-middle white italics thin'>Modern<br><br>Academic<br><br>Innovative</div>
+                        </div>
                     </div>
-                    <div class='image-tile float-left'></div>
+                    <div id='p1-fade-6' class='tile-grid4-rest background-image-tile float-left' style="background-image:url('../images/works/thecentre/child1.jpg');"></div>
                 </div>
+            </div>
+                
+<!-- Page 2 -->
+            <div id='works-p-2' class='works-p' style='display:none'>
+                <div id='p2-fade-1' class='intro fadein'>
+                    <h1>Web design</h1>
+                    <p>The Centre for Research, Innovation and Future Development is an innovative research centre at St Paul's School in Bald Hills, QLD. They conduct research into areas of education and constantly strive to find a better approach to the problems that phase education today.</p>
+                </div>
+                <div class='tiles'>
+                    <div class='tile-grid tile-grid2'>
+                        <div id='p2-fade-2' class='tile tile-grid2 float-left fadein image-change-tile pointer' style='background-image:url("../images/works/thecentre/web-design/thumb1.jpg")'>
+                        </div>
+                        <div id='p2-fade-3' class='tile tile-grid2 float-left fadein image-change-tile pointer' style='background-image:url("../images/works/thecentre/web-design/thumb2.jpg")'></div>
+                    </div>
+                    <div id='p2-fade-4' class='tile-grid2-rest background-image-tile float-left fadein pointer' style='background-image:url("../images/works/thecentre/web-design/home.jpg")'></div>
+                </div>
+            </div>
+            
+<!-- Page 3 -->
+            <div id='works-p-3' class='works-p' style='display:none'>
+                <div id='p3-fade-1' class='intro fadein'>
+                    <h1>Videography</h1>
+                    <p>The Centre for Research, Innovation and Future Development is an innovative research centre at St Paul's School in Bald Hills, QLD. They conduct research into areas of education and constantly strive to find a better approach to the problems that phase education today.</p>
+                </div>
+                <div class='tiles'>
+                    <div id='p3-fade-2' class='fadein works-video'>
+                        <iframe src="https://www.youtube.com/embed/QpEFjWbXog0?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+                
+<!-- Navigation -->                
                 <div class='nav'>
                     <div id='works-nav-previous' class='works-nav float-left pointer'>
                         <div class='thin small black works-nav-previous-text float-left'>Previous</div>
-                        <div class='bold medium black works-nav-title float-left' id='works-nav-previous-title'>Web Design</div>
+                        <div id='works-nav-previous-title' class='bold medium black works-nav-title float-left'>Web Design</div>
                     </div>
                     <div id='works-nav-next' class='works-nav float-right pointer'>
                         <div class='thin small black works-nav-next-text float-right'>Next</div>
-                        <div class='bold medium black works-nav-title float-right' id='works-nav-next-title'>Web Design</div>
+                        <div id='works-nav-next-title' class='bold medium black works-nav-title float-right'>Web Design</div>
                     </div>
                     <div id='works-nav-progress' class='overflow-hidden'>
                         <div id='works-nav-progress-fill'></div>
