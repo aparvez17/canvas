@@ -27,6 +27,9 @@ h2{
     bottom:0px;
     cursor:pointer;
 }
+#menu-link:hover{
+    color: #fff;
+}
 #menu-wrap{
     opacity: 0;
     display: none;

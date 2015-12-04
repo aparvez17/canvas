@@ -1,7 +1,7 @@
 $(document).ready(function(){
     var menu = 0;
     $("#menu-link").click(function(){
-        var filterVal = 'blur(5px)';
+        var filterVal = 'blur(10px)';
         $('#content').css('filter', filterVal)
          .css('webkitFilter', filterVal)
          .css('mozFilter', filterVal)
