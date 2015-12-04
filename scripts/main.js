@@ -1,16 +1,7 @@
 $(document).ready(function(){
     var menu = 0;
     $("#menu-link").click(function(){
-        var filterVal = 'blur(10px)';
-        $('#content').css('filter', filterVal)
-         .css('webkitFilter', filterVal)
-         .css('mozFilter', filterVal)
-         .css('oFilter', filterVal)
-         .css('msFilter', filterVal)
-         .css('transition', 'all 0.2s ease-in-out')
-         .css('-webkit-transition', 'all 0.2s ease-in-out')
-         .css('-moz-transition', 'all 0.2s ease-in-out')
-         .css('-o-transition', 'all 0.2s ease-in-out');
+        content_blur(10);
         open_close_menu();
     });
     $()
@@ -34,7 +25,54 @@ $(document).ready(function(){
     });
 
     $('#menu-wrap').click(function(){
-        var filterVal = 'blur(0px)';
+        content_blur(0);
+        open_close_menu();
+        close_contact();
+
+    });
+
+});
+var width = window.innerWidth;
+var height = window.innerHeight;
+function open_close_menu(){
+    if ($("#menu").attr( "active") == '0'){
+        $("#menu-wrap, #menu").show();
+        $("#menu-wrap, #menu").animate({opacity: 1}, 300);
+        $("#content").css('-webkit-transform', 'scale(0.9)');
+        $("#menu-link").animate({opacity: 0}, 300);
+        $( "body" ).mousemove(function( event ) {
+            mouse_x = event.pageX - (width/2);
+            mouse_y = event.pageY - (height/2);
+            $("#menu").css('-webkit-transform', 'rotateY('+mouse_x/80+'deg) rotateX('+mouse_y/50+'deg)');
+        });
+        $("#menu").attr( "active", "1");
+    }
+    else{
+        $("#content").css('-webkit-transform', 'scale(1)');
+        $("#menu-link").animate({opacity: 1}, 300);
+        $("#menu-wrap, #menu").animate({opacity: 0}, 300);
+        $("#menu-wrap, #menu").hide();
+        $("#menu").attr( "active", "0");
+    }
+}
+
+function open_contact(){
+    open_close_menu();
+    $("#menu").attr( "active", "1");
+    $("#menu-wrap").show();
+    
+    $("#contact-form").show();
+    $("#contact-form").animate({opacity: 1}, 300);
+    $("#contact-form-wrap").animate({opacity: 0.6}, 300);
+}
+
+function close_contact(){
+    $("#contact-form-wrap").animate({opacity: 0.0}, 300);
+    $("#contact-form").animate({opacity: 0}, 300);
+    $("#contact-form").hide();
+}
+function content_blur(amount){
+        var filterVal = 'blur('+amount+'px)';
         $('#content').css('filter', filterVal)
          .css('webkitFilter', filterVal)
          .css('mozFilter', filterVal)
@@ -44,32 +82,6 @@ $(document).ready(function(){
          .css('-webkit-transition', 'all 0.2s ease-in-out')
          .css('-moz-transition', 'all 0.2s ease-in-out')
          .css('-o-transition', 'all 0.2s ease-in-out');
-        open_close_menu();
-    });
-
-
-
-});
-var width = window.innerWidth;
-var height = window.innerHeight;
-function open_close_menu(){
-    if ($("#menu").attr( "active") == '0'){
-        $("#menu-wrap").show();
-        $("#menu-wrap").animate({opacity: 1}, 300);
-        $( "body" ).mousemove(function( event ) {
-            mouse_x = event.pageX - (width/2);
-            mouse_y = event.pageY - (height/2);
-            $("#menu").css('-webkit-transform', 'rotateY('+mouse_x/80+'deg) rotateX('+mouse_y/50+'deg)');
-        });
-        $("#menu").attr( "active", "1");
-    }
-    else{
-        $("#menu-wrap").animate({opacity: 0}, 300);
-        $("#menu-wrap").hide();
-        $("#menu").attr( "active", "0");
-    }
-    
-
 }
 
 function fade_items(ids,dir,init) {

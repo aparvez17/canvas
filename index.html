@@ -10,13 +10,20 @@
     <script src='scripts/main.js'></script>
 </head>
 <body>
-    <div id='menu-wrap'>
-        <div id='menu' active='0'>
-            <h2>Menu</h2>
-            <a>About us</a>
-            <a>Get in touch</a>
-        </div>
+    <div id='menu-wrap'></div>
+    <div id='menu' active='0'>
+        <h2>Menu</h2>
+        <a>About us</a>
+        <a onclick="open_contact();">Get in touch</a>
     </div>
+
+    <div id='contact-form-wrap'></div>
+        <div id='contact-form'>
+            <h2>Get in touch</h2>
+            <input type='text' id='name' placeholder='Name'>
+            <input type='text' id='email' placeholder='Email'>
+            <textarea id='message' placeholder='Message' rows="6"></textarea>
+        </div>
     <div id='content'>
         <div id='works' class='centre-middle'>
             <div id='work-0' class='works-item'
