@@ -35,7 +35,7 @@ $(document).ready(function(){
     $('.works-item').mouseenter(function(){
         var img = $(this).data('img');
         var title = $(this).data('title');
-        img = "url(" + img + ")";
+        img = "url('" + img + "')";
         $('#background').css("background-image",img);
         $('#background').fadeTo(400,0.6);
         $(this).stop().animate({"width":(item_w+size_change),

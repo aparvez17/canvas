@@ -86,4 +86,8 @@ function works_resize() {
     $('.tile-grid4-rest').css('width',c1);
     $('.tile-grid2').css('width',d);
     $('.tile-grid2-rest').css('width',d1);
+    
+    if (w < 700) {
+        $('.tiles').css('height',w);
+    }
 }
