@@ -1,60 +1,14 @@
 var showing = 0;
 $(document).ready(function(){
     $("#menu-link").click(function(){
-<<<<<<< HEAD
         content_blur(10);
-=======
-        var filterVal = 'blur(10px)';
-        $('#content').css('filter', filterVal)
-         .css('webkitFilter', filterVal)
-         .css('mozFilter', filterVal)
-         .css('oFilter', filterVal)
-         .css('msFilter', filterVal)
-<<<<<<< Updated upstream
-         .css('transition', 'all 0.2s ease-in-out')
-         .css('-webkit-transition', 'all 0.2s ease-in-out')
-         .css('-moz-transition', 'all 0.2s ease-in-out')
-         .css('-o-transition', 'all 0.2s ease-in-out');
->>>>>>> origin/master
         open_close_menu();
-=======
-         .css('transition', 'all 0.2s ease-in')
-         .css('-webkit-transition', 'all 0.2s ease-in')
-         .css('-moz-transition', 'all 0.2s ease-in')
-         .css('-o-transition', 'all 0.2s ease-in')
-        $('#menu').fadeIn(300);
-        $('#blur-cover').show();
-        showing = 1;
     });
-    $('#blur-cover').click(function(){
-        if (showing == 1) {
-        // close menu   
-            var filterVal = 'blur(0px)';
-            $('#content').css('filter', filterVal)
-             .css('webkitFilter', filterVal)
-             .css('mozFilter', filterVal)
-             .css('oFilter', filterVal)
-             .css('msFilter', filterVal)
-             .css('transition', 'all 0.2s ease-in')
-             .css('-webkit-transition', 'all 0.2s ease-in')
-             .css('-moz-transition', 'all 0.2s ease-in')
-             .css('-o-transition', 'all 0.2s ease-in')
-            $('#menu').fadeOut(300);
-        }
-        if (showing == 2) {
-        // close contact form    
-            
-        }
-        $( this ).hide();
-        showing = 0;
->>>>>>> Stashed changes
-    });
-    $()
+
     $('.works-link').click(function(){
         var url = $(this).data('url');
         alert(url);
     });
-<<<<<<< Updated upstream
 
     current_color = 0;
     colors = ["#ffbd00", "#ff2840", "#d03bfc", "#00cafc", "#00f785"]
@@ -76,19 +30,8 @@ $(document).ready(function(){
         close_contact();
 
     });
-
-=======
-    
-    $("a").click(function(){
-        event.preventDefault();
-        var href = $( this ).attr('href');
-        $('#fader').fadeIn(600,function(){
-            window.location.href = href;
-        });
-    });
-    
->>>>>>> Stashed changes
 });
+
 var width = window.innerWidth;
 var height = window.innerHeight;
 function open_close_menu(){
