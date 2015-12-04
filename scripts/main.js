@@ -7,16 +7,70 @@ $(document).ready(function(){
          .css('mozFilter', filterVal)
          .css('oFilter', filterVal)
          .css('msFilter', filterVal)
-         .css('transition', 'all 0.2s ease-in')
-         .css('-webkit-transition', 'all 0.2s ease-in')
-         .css('-moz-transition', 'all 0.2s ease-in')
-         .css('-o-transition', 'all 0.2s ease-in')
+         .css('transition', 'all 0.2s ease-in-out')
+         .css('-webkit-transition', 'all 0.2s ease-in-out')
+         .css('-moz-transition', 'all 0.2s ease-in-out')
+         .css('-o-transition', 'all 0.2s ease-in-out');
+        open_close_menu();
     });
+    $()
     $('.works-link').click(function(){
         var url = $(this).data('url');
         alert(url);
     });
+
+    current_color = 0;
+    colors = ["#ffbd00", "#ff2840", "#d03bfc", "#00cafc", "#00f785"]
+    $("#menu a").hover(function(){
+        $(this).css('background-color', colors[current_color]);
+        $(this).css('color', '#fff');
+        $(this).stop().animate({paddingLeft: '40px'}, 200);
+        current_color += 1;
+        if (current_color > 4){ current_color = 0; }
+    }, function(){
+        $(this).css('background-color', '#ffffff');
+        $(this).css('color', '#000');
+        $(this).stop().animate({paddingLeft: '25px'}, 200);
+    });
+
+    $('#menu-wrap').click(function(){
+        var filterVal = 'blur(0px)';
+        $('#content').css('filter', filterVal)
+         .css('webkitFilter', filterVal)
+         .css('mozFilter', filterVal)
+         .css('oFilter', filterVal)
+         .css('msFilter', filterVal)
+         .css('transition', 'all 0.2s ease-in-out')
+         .css('-webkit-transition', 'all 0.2s ease-in-out')
+         .css('-moz-transition', 'all 0.2s ease-in-out')
+         .css('-o-transition', 'all 0.2s ease-in-out');
+        open_close_menu();
+    });
+
+
+
 });
+var width = window.innerWidth;
+var height = window.innerHeight;
+function open_close_menu(){
+    if ($("#menu").attr( "active") == '0'){
+        $("#menu-wrap").show();
+        $("#menu-wrap").animate({opacity: 1}, 300);
+        $( "body" ).mousemove(function( event ) {
+            mouse_x = event.pageX - (width/2);
+            mouse_y = event.pageY - (height/2);
+            $("#menu").css('-webkit-transform', 'rotateY('+mouse_x/80+'deg) rotateX('+mouse_y/50+'deg)');
+        });
+        $("#menu").attr( "active", "1");
+    }
+    else{
+        $("#menu-wrap").animate({opacity: 0}, 300);
+        $("#menu-wrap").hide();
+        $("#menu").attr( "active", "0");
+    }
+    
+
+}
 
 function fade_items(ids,dir,init) {
     // ids:  array of element handles to fade
