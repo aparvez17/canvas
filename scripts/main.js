@@ -31,9 +31,10 @@ $(document).ready(function(){
     });
 
 });
-var width = window.innerWidth;
-var height = window.innerHeight;
+
 function open_close_menu(){
+    var width = window.innerWidth;
+    var height = window.innerHeight;
     if ($("#menu").attr( "active") == '0'){
         $("#menu-wrap, #menu").show();
         $("#menu-wrap, #menu").animate({opacity: 1}, 300);

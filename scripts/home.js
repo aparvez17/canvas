@@ -1,4 +1,11 @@
 $(document).ready(function(){
+
+    $('#content').css('opacity', '0');
+    $('#intro2_hype_container').delay(7000).animate({opacity: 0}, 600, function(){
+        $('#intro2_hype_container').hide();
+        $('#content').animate({opacity: 1}, 400);
+    });
+
     /* Place work items */
     var i;
     var lr = 50; /* Diameter of circles */

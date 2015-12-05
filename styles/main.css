@@ -1,6 +1,6 @@
 
 body {
-    background-color:rgb(26,25,25);
+    background-color: #080718;
     padding:0px;
     margin:0px;
     font-family: "Helvetica Neue";
@@ -21,7 +21,6 @@ h2{
     font-family:'Helvetica' sans-serif;
     z-index:1;
 }
-
 /* Menu */
 #menu-link {
     margin:20px;
