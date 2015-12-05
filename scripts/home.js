@@ -42,8 +42,12 @@ $(document).ready(function(){
                                 "height":(item_w+size_change),
                                 "margin-left":margin-(size_change/2),
                                 "margin-top":margin-(size_change/2),
-                                "background-size":"110%"}, 120);
+                                "background-size":"100%"}, 120);
+         $(this).css('border', '5px solid '+colors[current_color]);
+         current_color += 1;
+         if (current_color > 4){ current_color = 0; }
     });
+   
     
     $('.works-item').mouseleave(function(){
         $('#background').fadeTo(400,0);
@@ -51,7 +55,8 @@ $(document).ready(function(){
                                 "height":(item_w),
                                 "margin-left":margin,
                                 "margin-top":margin, 
-                                "background-size":"100%"}, 120);
+                                "background-size":"122%"}, 120);
+        $(this).css('border', '5px solid transparent');
     });
     
     $('#works-icon-link').click(function() {
