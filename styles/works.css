@@ -77,6 +77,7 @@
 }
 .intro {
     margin:60px;
+    margin-bottom:40px;
 }
 
 @media screen and (max-height:700px) {
@@ -220,8 +221,7 @@
         width:100%;
     }
     .nav {
-        position:initial;
-        bottom:0;
+        position:absolute;
     }
 }
 
@@ -283,4 +283,21 @@
     .tile-grid4-rest {
         height:50vw !important;   
     }
+}
+
+/* tall, not-narrow devices */
+@media screen and (min-width:800px) and (min-height:800px){
+    @media screen and (max-width:1200px) {
+        .intro {
+            margin-top:100px;
+            margin-bottom:100px;
+        }
+    }
+    @media screen and (min-height:1000px) and (max-width:1200px) {
+        .intro {
+            margin-top:250px;
+            margin-bottom:250px;
+        }
+    }
+    
 }

@@ -33,12 +33,15 @@ function change_page(from,to,arr) {
        ids_in[i] = "#p"+to+"-fade-"+(i+1);
     }
     
+    // fade menu to handle position change on narrow screens
+    var w = $(window).width();
+
     // fade page out
     fade_items(ids_out,0,0);
     $('#works-p-'+to).show();
     fade_items(ids_in,1,delay_calc(arr[from-1]));
     $('#works-p-'+from).delay(delay_calc(arr[from-1])+400).hide(0);
-    
+        
     // progress bar
     var progress = to / arr.length * 100;
     $('#works-nav-progress-fill').animate({width:progress+'%'},800);
@@ -58,7 +61,7 @@ function change_page(from,to,arr) {
     } else {
         $('#works-nav-next').fadeOut(300);
     }
-    
+        
     // update page
     page = to;
 }
@@ -70,12 +73,7 @@ function works_resize() {
     var h = $( document ).height();
     var w = $( document ).width();
     
-    // Responsive calculations
-    if (h > 700) {
-        var c = h - 320;
-    } else {
-        var c = h - 250;   
-    }
+    var c = h - 110 - $('.intro').outerHeight(true);
     
     d = c / 2;
     c1 = 0.6*w - c;
@@ -90,4 +88,16 @@ function works_resize() {
     if (w < 700) {
         $('.tiles').css('height',w);
     }
+    
+    // Calculate height of thin content for nav bar
+    if (w < 800) {
+        c = $('#works-p-1 .intro').height();
+        if (w < 650) {
+            c = c + 1.5*w + 110 + 100;   
+        } else {
+            c = c + 0.5*w + 110 + 100;  
+        }
+        $('#works-content').css('height',c);
+    }
+    
 }
