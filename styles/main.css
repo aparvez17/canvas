@@ -122,6 +122,7 @@ h2{
     top:50%;
     left:50%;
     transform:translate(-50%,-50%);
+    -webkit-transform:translate(-50%,-50%);
 }
 .centre-full-text {
     width:100%;
