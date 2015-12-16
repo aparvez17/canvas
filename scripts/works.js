@@ -16,6 +16,15 @@ $(document).ready(function() {
     });
 });
 
+// Parallax scroll
+var offset;
+$(window).scroll(function() {
+    if ($(document).width() <= 800) {
+        offset = $(window).scrollTop();
+        $('#works-title-container').css({top:-offset/2+'px'})
+    }
+});
+
 function change_page(from,to,arr) {
     var pages = arr.length; // num pages
     
@@ -64,6 +73,9 @@ function change_page(from,to,arr) {
         
     // update page
     page = to;
+    
+    
+    
 }
 
 
