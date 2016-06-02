@@ -1,0 +1,185 @@
+/* --------------------------------------------------------
+Animated Elements Style Sheet for Canvas
+
+version: 1.0
+last modified: 07.02.2016 by Asad Parvez
+author: Asad Pavez
+website: http://canvasdigital.com.au
+----------------------------------------------------------*/
+
+
+/* --------------
+
+    SPLASH BORDER EFFECT
+
+   ----------------- */
+
+.animated-border{
+    width: 600px;
+    height: 255px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 0;
+    box-shadow: 10px 10px 0px #ff057b;
+    padding: 3px;
+}
+.animated-border path{
+    height: 255px;
+    width: 600px;
+    stroke: #3d7dff;
+}
+.border-top{
+    stroke-dasharray: 300;
+    -webkit-animation: hdash 7s ease infinite;
+}
+.border-right{
+    stroke-dasharray: 127;
+    -webkit-animation: vdash 7s ease infinite;
+}
+.border-left{
+    stroke-dasharray: 127;
+    -webkit-animation: vdash 7s ease infinite;
+}
+.border-bottom{
+    stroke-dasharray: 300;
+    -webkit-animation: hdash 7s ease infinite;
+}
+@-webkit-keyframes hdash {
+    0%{
+        stroke-dashoffset: 300;
+    }
+    50%{
+        stroke-dashoffset: 0;
+    }
+    100%{
+        stroke-dashoffset: 300;
+    }
+}
+@-webkit-keyframes vdash {
+    0%{
+        stroke-dashoffset: 127;
+    }
+    50%{
+        stroke-dashoffset: 0;
+    }
+    100%{
+        stroke-dashoffset: 127;
+    }
+}
+
+
+/* ----------------------
+
+    BLUE SPLASH DOWN ARROWS
+
+------------------------- */
+.arrows {
+	width: 60px;
+	height: 72px;
+	position: absolute;
+	left: 50%;
+	margin-left: -30px;
+	bottom: 20px;
+}
+
+.arrows path {
+	stroke: #2994D1;
+	fill: transparent;
+	stroke-width: 1px;
+	animation: arrow 2s infinite;
+	-webkit-animation: arrow 2s infinite;
+}
+
+@keyframes arrow
+{
+0% {opacity:0}
+40% {opacity:1}
+80% {opacity:0}
+100% {opacity:0}
+}
+
+@-webkit-keyframes arrow /*Safari and Chrome*/
+{
+0% {opacity:0}
+40% {opacity:1}
+80% {opacity:0}
+100% {opacity:0}
+}
+
+.arrows path.a1 {
+	animation-delay:-0.5s;
+	-webkit-animation-delay:-0.5s; /* Safari 和 Chrome */
+}
+
+.arrows path.a2 {
+	animation-delay:-0.25s;
+	-webkit-animation-delay:-0.25s; /* Safari 和 Chrome */
+}
+
+.arrows path.a3 {
+	animation-delay:0s;
+	-webkit-animation-delay:0s; /* Safari 和 Chrome */
+}
+
+
+/* -----------------------
+
+    PULSING INTRO BOX "We're a design agency that helps build visions"
+
+   ----------------------- */
+.intro-box{
+    font-size: 3.4em;
+    line-height: 1.2;
+    color: #fff;
+    font-family: "Raleway-Thin";
+    border: 1px solid #fff;
+    padding: 50px;
+    width: 350px;
+    height: 350px;
+    margin: 0 auto;
+    position: relative;
+    transition: all 1s ease;
+    -webkit-animation: pulse 10s infinite;
+}
+@-webkit-keyframes pulse {
+  0%   {
+      background-color: transparent;
+      color: #fff;
+   }
+   30%   {
+       background-color: transparent;
+       color: #fff;
+    }
+  50%  {
+      background-color: #fff;
+      color: #3d7dff;
+  }
+  80%  {
+      background-color: #fff;
+      color: #3d7dff;
+  }
+  100% {
+      background-color: transparent;
+      color: #fff;
+   }
+}
+.intro-box span{
+    font-family: "Raleway-Regular";
+    font-weight: 400;
+}
+.line-left, .line-right{
+    width: 70px;
+    border: 0px;
+    height: 1px;
+    background-color: #fff;
+    position: absolute;
+}
+.line-left{
+    left: -120px;
+    top: 200px;
+}
+.line-right{
+    right: -120px;
+    top: 200px;
+}

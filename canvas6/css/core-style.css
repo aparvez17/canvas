@@ -1,0 +1,236 @@
+/* --------------------------------------------------------
+Core Style Sheet for Canvas
+
+version: 1.0
+last modified: 07.02.2016 by Asad Parvez
+author: Asad Pavez
+website: http://canvasdigital.com.au
+----------------------------------------------------------*/
+
+/* -------------------------
+
+    FONTS
+
+   ------------------------- */
+@font-face {
+  font-family: Raleway-Thin;
+  src: url(../fonts/Raleway-Thin.ttf);
+}
+@font-face {
+  font-family: Raleway-Regular;
+  src: url(../fonts/Raleway-Regular.ttf);
+}
+/* -------------------------
+
+    GENERAL CLASSES
+
+   ------------------------- */
+
+body{
+}
+.canvas-dark-bg{
+    background-color: #040122;
+}
+.white{
+    color: #fff;
+}
+.black-bg{
+    background-color: rgb(1, 12, 35);
+}
+.blue-bg{
+    background-color: blue;
+}
+.opacity0{
+    opacity: 0;
+}
+.opacity60{
+    opacity: 0.6;
+}
+.opacity100{
+    opacity: 1;
+}
+.transition{
+    -webkit-transition: all 0.3s ease;
+}
+.button{
+    cursor: pointer;
+}
+.page{
+    margin: 0 auto;
+    padding: 40px;
+}
+.panel{
+    min-height: 570px;
+    position: relative;
+    padding: 20px;
+}
+.page-pad{
+    padding-top: 150px;
+}
+.right{
+    float: right;
+}
+.text-center{
+    text-align: center;
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: "Avenir", sans-serif;
+}
+h1{
+    font-size: 2.6em;
+    font-weight:300;
+}
+h2{
+    font-size: 2em;
+}
+h3{
+    font-size: 1.6em;
+}
+h4{
+    font-size: 1em;
+    font-weight: 200;
+}
+.blue-hover:hover{
+    color: rgb(5, 199, 255);
+}
+.animated-link{
+    text-decoration: none;
+    position: relative;
+    cursor: pointer;
+    transition: opacity 0.4s ease;
+}
+.animated-link:hover{
+    opacity: 1;
+}
+.animated-link:after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 0%;
+  border-bottom: 2px solid #3366FF;
+  transition: 0.4s ease;
+}
+.animated-link:hover:after {
+  width: 100%;
+}
+.animated-link:active:after {
+    width: 80%;
+    left: 10%;
+    transition: 0.1s ease;
+}
+.blue-gradient{
+    background: -webkit-linear-gradient(135deg,#7800ff,#3d7dff,#00ffff);
+    background: linear-gradient(-45deg,#7800ff,#3d7dff,#00ffff);
+    padding-top: 140px;
+}
+/* ----------------------------
+
+    CUSTOM TYPOGRAPHY
+
+   ---------------------------- */
+
+.massive{
+   font-size: 4.8em;
+   line-height: 1;
+   font-weight: 100;
+   font-family: "Raleway-Thin";
+}
+.section-title{
+    font-family: "Raleway-Thin", sans-serif;
+    font-size: 4em;
+    font-weight: 400;
+    margin-bottom: 50px;
+}
+.item-title{
+    font-family: "Avenir", sans-serif;
+    font-size: 1.6em;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+.text{
+    font-family: "Raleway-Thin", sans-serif;
+    font-size: 1.2em;
+    font-weight: 100;
+    color: #ccc;
+}
+
+/* ----------------------------
+
+    HOMEPAGE SPLASH
+
+   ---------------------------- */
+
+.splash{
+    height: 700px;
+    width: 100%;
+    position: relative;
+    background-repeat:no-repeat;
+    background-size:cover;
+    overflow: hidden;
+    z-index: 2;
+}
+.splash-background{
+    height: 700px;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: -1;
+    background-color: #000;
+    background-position: 50% 50%;
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+.splash-cover{
+    height: 700px;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+.splash-heading{
+    padding: 50px;
+    width: 600px;
+    box-sizing: border-box;
+    text-align: center;
+}
+.splash-heading-container{
+    margin: 150px auto 100px auto;
+    box-sizing: border-box;
+    position: relative;
+    width: 602px;
+    height: 257px;
+}
+.splash-subheading{
+    padding-top: 20px;
+    font-weight: 500;
+    font-size: 1.3em;
+}
+.splash-header{
+    padding: 50px;
+}
+.header-logo{
+    float: left;
+}
+.sandbox-button{
+    color: #fff;
+    opacity: 0.6;
+}
+.sandbox-button-container{
+    float: right;
+    width: auto;
+}
+.arrows{
+    margin-bottom: 70px;
+}
+
+/* -------------------------
+
+   INTRO
+
+   ------------------------- */
+
+.intro{
+    z-index: 10;
+}

@@ -1,0 +1,126 @@
+.canvas-dark-bg{
+    background-color: rgba(255,255,255,0.6);
+}
+.white{
+    color: #fff;
+}
+.opacity60{
+    opacity: 0.6;
+}
+.transition{
+    -webkit-transition: all 0.3s ease;
+}
+.button{
+    cursor: pointer;
+}
+.page{
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px;
+}
+.panel{
+    min-height: 400px;
+}
+.right{
+    float: right;
+}
+.left{
+    float: left;
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: "Montserrat", sans-serif;
+}
+h1{
+    font-size: 2.6em;
+    font-weight:300;
+}
+h2{
+    font-size: 2em;
+}
+h3{
+    font-size: 1.6em;
+}
+h4{
+    font-size: 1.2em;
+    font-weight: 200;
+}
+.blue-hover:hover{
+    color: rgb(5, 199, 255);
+}
+.splash{
+    height: 160vh;
+    width: 100%;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: 100%;
+        background-color: rgba(0,0,0,1);
+}
+.splash-heading{
+    padding-top: 24vh;
+    line-height: 1.2;
+    font-weight: 500;
+}
+.splash-subheading{
+    padding-top: 14px;
+}
+.splash-header{
+    background-color: rgba(0,0,0,1);
+}
+.splash-logo-container{
+    margin: 100px auto;
+    width: 250px;
+    height: 250px;
+    background-color: #fff;
+    border-radius: 200px;
+    position: relative;
+    transition: -webkit-transform 0.3s ease;
+}
+.splash-logo-container:hover{
+    -webkit-transform: rotate(-45deg);
+}
+.splash-logo{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -75px;
+    margin-top: -20px;
+    -webkit-transform: rotate(0deg);
+}
+.splash-promo{
+    margin-top: 130px;
+    padding-left: 50px;
+}
+.massive{
+    font-size: 5em;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.menu-icon{
+    float: right;
+    width: 60px;
+    height: 60px;
+    background-image: url("../images/icons/menu-icon.png");
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    border-radius: 100%;
+    -webkit-transform: scale(1);
+    border: 1px solid rgba(0,0,0,0);
+    margin-top: -19px;
+
+}
+.menu-icon:hover{
+    -webkit-transform: rotate(-90deg);
+}
+.close-icon{
+    width: 25px;
+    height: 25px;
+    background-image: url("../images/icons/close-icon.png");
+    background-size: 25px;
+    background-repeat: no-repeat;
+    float: right;
+}
+.close-icon:hover{
+    -webkit-transform: rotate(90deg);
+}

@@ -1,0 +1,88 @@
+/* --------------------------------------------------------
+Responsive Style Sheet for Canvas
+
+version: 1.0
+last modified: 07.02.2016 by Asad Parvez
+author: Asad Pavez
+website: http://canvasdigital.com.au
+----------------------------------------------------------*/
+@media(max-width: 600px){
+    h1{
+        font-size: 2.4em;
+        font-weight:300;
+    }
+    h2{
+        font-size: 2em;
+    }
+    h3{
+        font-size: 1.6em;
+    }
+    h4{
+        font-size: 1em;
+        font-weight: 200;
+    }
+    .splash{
+        height: 35em;
+    }
+    .splash-background{
+        height: 35em;
+        background-image: url("../images/mobile-bg.png");
+        background-size: auto 35em;
+    }
+    .video{
+        display: none;
+    }
+    .splash-cover{
+        background-color: rgba(0,0,0,0.3);
+    }
+    .massive{
+       font-size: 3.6em;
+    }
+    .splash-heading-container{
+        width: 100%;
+        box-sizing: border-box;
+        margin: 40px auto 60px auto;
+        padding: 20px;
+    }
+    .splash-heading{
+        width: 100%;
+        padding: 40px;
+        box-sizing: border-box;
+
+    }
+    .animated-border{
+        display: none;
+    }
+    .splash-header{
+        padding: 20px;
+    }
+    .intro-box{
+        box-sizing: border-box;
+        font-size: 2.6em;
+    }
+    .panel{
+        min-height: 450px;
+    }
+    .intro{
+        height: 480px!important;
+    }
+    .line-left, .line-right{
+        display: none;
+    }
+    .sandbox-button-container{
+        margin-top: -8px;
+        width: 100px;
+        text-align: right;
+    }
+    .sandbox-button{
+        opacity: 1;
+        line-height: 1.2;
+    }
+    .arrows{
+        bottom: 140px;
+    }
+    .a1,.a2{
+        display: none;
+    }
+
+}
